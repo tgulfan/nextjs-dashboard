@@ -22,7 +22,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
     }
 
     replace(`${pathname}?${params.toString()}`);
-  }, 3000);
+  }, 2000);
 
   return (
     <div className="relative flex flex-1 flex-shrink-0">
