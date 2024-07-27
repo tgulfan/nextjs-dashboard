@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import React from 'react';
 
 import Form from '@/app/ui/invoices/edit-form';
@@ -10,6 +11,10 @@ const Page = async ({ params }: { params: { id: string } }) => {
     fetchInvoiceById(id),
     fetchCustomers(),
   ]);
+
+  if (!invoice) {
+    notFound();
+  }
 
   return (
     <main>
